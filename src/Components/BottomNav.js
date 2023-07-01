@@ -1,17 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import {
-  backGroundColor1,
-  backGroundColor2,
-  primaryColor,
-  themecol,
-} from "../Styles/theme1";
+import { backGroundColor2, primaryColor, themecol } from "../Styles/theme1";
 //icons
 import { SimpleLineIcons } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
+
 import { Entypo } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
-const BottomNav = ({ activepage }) => {
+const BottomNav = ({ activepage, navigation }) => {
   // console.log(activepage);
   return (
     <View style={styles.container}>
@@ -28,6 +23,7 @@ const BottomNav = ({ activepage }) => {
           size={50}
           color="black"
           style={styles.icon}
+          onPress={() => navigation.navigate("allmusic")}
         />
       )}
       {activepage == "player" ? (
@@ -43,12 +39,13 @@ const BottomNav = ({ activepage }) => {
           size={50}
           color="black"
           style={styles.icon}
+          onPress={() => navigation.navigate("player")}
         />
       )}
-      {activepage == "playlists" ? (
+      {activepage == "allplaylists" ? (
         <SimpleLineIcons
           name="playlist"
-          size={24}
+          size={50}
           color="black"
           style={styles.iconactive}
         />
@@ -58,6 +55,7 @@ const BottomNav = ({ activepage }) => {
           size={50}
           color="black"
           style={styles.icon}
+          onPress={() => navigation.navigate("allplaylists")}
         />
       )}
     </View>

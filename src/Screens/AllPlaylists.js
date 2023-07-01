@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-
-const AllPlaylists = (navigation) => {
+import BottomNav from "../Components/BottomNav";
+const AllPlaylists = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text>All Playlists</Text>
