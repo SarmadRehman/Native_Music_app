@@ -1,12 +1,33 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Player from "./src/Screens/Player";
+import AllMusic from "./src/Screens/AllMusic";
+import AllPlaylists from "./src/Screens/AllPlaylists";
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>This is me Sarmad here !</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="allmusic"
+          component={AllMusic}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Player"
+          component={Player}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="allplaylists"
+          component={AllPlaylists}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
